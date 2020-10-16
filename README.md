@@ -40,7 +40,7 @@ ENTRYPOINT lite-server -c bs-config.js
 
 [bs-config.js](task_2/dist/bs-config.js)
 
-```javasscript
+```javascript
 module.exports = {
   server: { baseDir: "./static/" },
   open: false,
@@ -157,7 +157,7 @@ ENTRYPOINT json-server /root/db/db.json --routes routes.json
 
 [bs-config.js](task_4/dist/bs-config.js)
 
-```javasscript
+```javascript
 module.exports = {
   server: { baseDir: "./static/" },
   open: false
