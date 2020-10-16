@@ -185,7 +185,7 @@ http {
     listen 80;
     log_subrequest on;
     location /api/ {
-        proxy_http_version 1.1;
+      proxy_http_version 1.1;
       proxy_connect_timeout 300s;
       proxy_send_timeout 300s;
       proxy_read_timeout 300s;
