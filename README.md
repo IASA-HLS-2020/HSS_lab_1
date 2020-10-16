@@ -38,6 +38,15 @@ WORKDIR /root/dist/
 ENTRYPOINT lite-server -c bs-config.js
 ```
 
+[bs-config.js](task_2/dist/bs-config.js)
+
+```javasscript
+module.exports = {
+  server: { baseDir: "./static/" },
+  open: false,
+};
+```
+
 ## Task 3
 
 [docker-compose.yml](task_3/docker-compose.yml)
@@ -144,6 +153,15 @@ ENTRYPOINT json-server /root/db/db.json --routes routes.json
 {
   "/api/*": "/$1"
 }
+```
+
+[bs-config.js](task_4/dist/bs-config.js)
+
+```javasscript
+module.exports = {
+  server: { baseDir: "./static/" },
+  open: false
+};
 ```
 
 [nginx.conf](task_4/nginx/nginx.conf)
