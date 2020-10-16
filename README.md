@@ -166,7 +166,7 @@ module.exports = {
 
 [nginx.conf](task_4/nginx/nginx.conf)
 
-```conf
+```Nginx
 events { worker_connections 1024; }
 
 http {
