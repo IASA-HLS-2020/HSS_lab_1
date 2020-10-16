@@ -7,10 +7,10 @@ IASA HighScalable Systems lab 1
 [docker-compose.yml](task_1/docker-compose.yml)
 
 ```yaml
-    version: "3.8"
-    services:
-    hello-world:
-        image: hello-world:latest
+version: "3.8"
+services:
+hello-world:
+    image: hello-world:latest
 ```
 
 ## Task 2
@@ -18,15 +18,15 @@ IASA HighScalable Systems lab 1
 [docker-compose.yml](task_2/docker-compose.yml)
 
 ```yaml
-    version: "3.8"
-    services:
-    lite-server:
-        restart: always
-        build: .
-        volumes:
-        - ./dist:/root/dist
-        ports:
-        - 3000:3000
+version: "3.8"
+services:
+lite-server:
+    restart: always
+    build: .
+    volumes:
+    - ./dist:/root/dist
+    ports:
+    - 3000:3000
 ```
 
 [Dockerfile](task_2/Dockerfile)
@@ -43,15 +43,15 @@ ENTRYPOINT lite-server -c bs-config.js
 [docker-compose.yml](task_3/docker-compose.yml)
 
 ```yaml
-    version: "3.8"
-    services:
-    json-server:
-        restart: always
-        build: .
-        volumes:
-        - ./dist:/root/dist
-        ports:
-        - 3000:80
+version: "3.8"
+services:
+json-server:
+    restart: always
+    build: .
+    volumes:
+    - ./dist:/root/dist
+    ports:
+    - 3000:80
 ```
 
 [Dockerfile](task_3/Dockerfile)
@@ -79,36 +79,36 @@ ENTRYPOINT json-server ./db/db.json
 [docker-compose.yml](task_4/docker-compose.yml)
 
 ```yaml
-    version: "3.8"
-    services:
-        nginx:
-            restart: always
-            image: nginx:latest
-            command: "nginx -g 'daemon off;'"
-            volumes:
-            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-            ports:
-            - 8000:80
-            depends_on:
-            - json-server
-            - lite-server
+version: "3.8"
+services:
+    nginx:
+        restart: always
+        image: nginx:latest
+        command: "nginx -g 'daemon off;'"
+        volumes:
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+        ports:
+        - 8000:80
+        depends_on:
+        - json-server
+        - lite-server
 
-        json-server:
-            restart: always
-            build: 
-            context: ./api
-            dockerfile: ./api.Dockerfile
-            volumes:
-            - ./api:/root
-        
-        lite-server:
-            restart: always
-            build: 
-            context: ./dist
-            dockerfile: ./lite.Dockerfile
-            entrypoint: lite-server -c /root/bs-config.js
-            volumes: 
-            - ./dist:/root
+    json-server:
+        restart: always
+        build: 
+        context: ./api
+        dockerfile: ./api.Dockerfile
+        volumes:
+        - ./api:/root
+    
+    lite-server:
+        restart: always
+        build: 
+        context: ./dist
+        dockerfile: ./lite.Dockerfile
+        entrypoint: lite-server -c /root/bs-config.js
+        volumes: 
+        - ./dist:/root
 ```
 
 [lite.Dockerfile](task_4/dist/lite.Dockerfile)
@@ -196,4 +196,4 @@ http {
 
 ## Task 5
 
-[Posstman collection] (task_5/HSS_lab1.postman_collection.json)
+[Postman collection](task_5/HSS_lab1.postman_collection.json)
