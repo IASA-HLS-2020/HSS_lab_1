@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  json-server:
+    restart: always
+    build: .
+    volumes: 
+      - ./dist:/root/dist
+    ports:
+      - 3000:80

@@ -1,0 +1,452 @@
+{
+	"info": {
+		"_postman_id": "f293d78e-f492-4707-8013-a90549e5d7b4",
+		"name": "HSS lab1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Posts",
+					"item": [
+						{
+							"name": "Posts list",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e0238cbf-05b4-4e97-986c-ffb0974f0673",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Is valid dummy db\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expect = [",
+											"    {",
+											"        \"id\": 1,",
+											"        \"title\": \"Post 1\"",
+											"    },",
+											"    {",
+											"        \"id\": 2,",
+											"        \"title\": \"Post 2\"",
+											"    },",
+											"    {",
+											"        \"id\": 3,",
+											"        \"title\": \"Post 3\"",
+											"    }",
+											"    ]",
+											"    pm.expect(jsonData).to.eql(expect);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/posts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts"
+									]
+								},
+								"description": "Show posts list"
+							},
+							"response": []
+						},
+						{
+							"name": "Post 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "dcb5c2b6-aa2b-49fb-affa-6f2d14d74fef",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Is valid dummy db\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expect = ",
+											"    {",
+											"    \"id\": 1,",
+											"    \"title\": \"Post 1\"",
+											"  }",
+											"    pm.expect(jsonData).to.eql(expect);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/posts/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts",
+										"1"
+									]
+								},
+								"description": "Show post with id 1"
+							},
+							"response": []
+						},
+						{
+							"name": "Post 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "04cd8fc0-f4a3-4de2-a13d-96cd7a290175",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Is valid dummy db\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expect = ",
+											"    {",
+											"    \"id\": 2,",
+											"    \"title\": \"Post 2\"",
+											"  }",
+											"    pm.expect(jsonData).to.eql(expect);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/posts/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts",
+										"2"
+									]
+								},
+								"description": "Show post with id 2"
+							},
+							"response": []
+						},
+						{
+							"name": "Post 3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "292ab31d-1c68-4251-9395-d69e26a66911",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Is valid dummy db\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expect = ",
+											"    {",
+											"    \"id\": 3,",
+											"    \"title\": \"Post 3\"",
+											"  }",
+											"    pm.expect(jsonData).to.eql(expect);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/posts/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"posts",
+										"3"
+									]
+								},
+								"description": "Show post with id 3"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Comments",
+					"item": [
+						{
+							"name": "Comments list",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1e024bd0-68cc-4588-8a18-28604d5941ff",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Is valid dummy db\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expect = [",
+											"    {",
+											"      \"id\": 1,",
+											"      \"body\": \"some comment\",",
+											"      \"postId\": 1",
+											"    },",
+											"    {",
+											"      \"id\": 2,",
+											"      \"body\": \"some comment\",",
+											"      \"postId\": 1",
+											"    }",
+											"  ]",
+											"    pm.expect(jsonData).to.eql(expect);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/comments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"comments"
+									]
+								},
+								"description": "Show comments list"
+							},
+							"response": []
+						},
+						{
+							"name": "Comments 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ddfe03b-4ce3-4789-b25c-24b1df171e89",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Is valid dummy db\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expect = ",
+											"    {",
+											"        \"id\": 1,",
+											"        \"body\": \"some comment\",",
+											"        \"postId\": 1",
+											"    }",
+											"    pm.expect(jsonData).to.eql(expect);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/comments/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"comments",
+										"1"
+									]
+								},
+								"description": "Show comment with id 1"
+							},
+							"response": []
+						},
+						{
+							"name": "Comments 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "e5bc7f7e-49c7-4041-bb6e-4d870f50f2ac",
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.test(\"Is valid dummy db\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expect = ",
+											"    {",
+											"        \"id\": 2,",
+											"        \"body\": \"some comment\",",
+											"        \"postId\": 1",
+											"    }",
+											"    pm.expect(jsonData).to.eql(expect);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/comments/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"comments",
+										"2"
+									]
+								},
+								"description": "Show comment with id 2"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c0dafd3b-3448-44c1-9045-b1c331ed461f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"pm.test(\"Is valid dummy db\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    var expect = [",
+									"    {",
+									"      \"id\": 1,",
+									"      \"body\": \"some comment\",",
+									"      \"postId\": 1",
+									"    },",
+									"    {",
+									"      \"id\": 2,",
+									"      \"body\": \"some comment\",",
+									"      \"postId\": 1",
+									"    }",
+									"  ]",
+									"    pm.expect(jsonData).to.eql(expect);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments"
+							]
+						},
+						"description": "Show profile object"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "static",
+			"item": [
+				{
+					"name": "Welcome page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f9f0e114-af90-4d79-93b2-a00bdc637592",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/index.html",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"index.html"
+							]
+						},
+						"description": "Get a welcoms static page"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
